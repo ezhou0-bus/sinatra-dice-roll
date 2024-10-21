@@ -7,59 +7,16 @@ BetterErrors.application_root = __dir__
 BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 
 
-<!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
-    <title> Dice Roll </title>
+get("/") do
+  "Hello World"
+  "
+  <h1>Dice Roll</h1>
+  <ul>
+    <li><a href=\"/dice/2/6\">Roll two 6-sided dice</a></li>
+    <li><a href=\"/dice/2/10\">Roll two 10-sided dice</a></li>
+    <li><a href=\"/dice/1/20\">Roll one 20-sided die</a></li>
+    <li><a href=\"/dice/5/4\">Roll five 4-sided dice</a></li>
+  </ul>
+  "
+end
 
-    <style>
-    /*
-    * {
-      border: 1px red dashed;
-    }
-    */
-                
-                html {
-      min-height: 100%;
-    }
-    
-                body {
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background: linear-gradient(75deg, #fcffd6, #fce0be, #f8bdb0, #f5abc8, #dba5f2);
-     color: rgba(255, 255, 255, 1.0);
-      font-family: "Impact"
-    }
-    
-    a {
-        color: rgba(255, 255, 255, 1.0);
-        text-decoration: none;
-    }
-    </style>
-
-    </head>
-    
-    <body>
-    <div class = "main container">
-      
-    <div class = "link rows "> 
-    get("/dice/2/6") do
-      first_die = rand(1..6)
-      second_die = rand(1..6)
-      sum = first_die + second_die
-      
-      outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
-      
-      "<h1>2d6</h1>
-       <p>#{outcome}</p>"
-    end
-    </div>
-
-
-
-    </body>
-    
-    </html>
